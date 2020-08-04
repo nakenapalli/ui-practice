@@ -52,10 +52,12 @@ class SamplePage extends StatelessWidget {
           ),
           SizedBox(height: 25.0),
           SingleChildScrollView(
+            scrollDirection: Axis.horizontal,
             padding: EdgeInsets.only(left: 15),
             child: ToggleButtons(
               color: Colors.white,
-              isSelected: <bool>[true, false, false],
+              renderBorder: false,
+              isSelected: [false, false, false],
               children: <Widget>[
                 Padding(
                   padding: EdgeInsets.fromLTRB(15, 0, 15, 0),
@@ -97,9 +99,15 @@ class SamplePage extends StatelessWidget {
                   padding: EdgeInsets.fromLTRB(15, 0, 15, 0),
                   child: RaisedButton(
                     onPressed: () {},
-                    child: Text(
-                      "Bank to Bank",
-                      style: GoogleFonts.robotoCondensed(),
+                    child: Row(
+                      crossAxisAlignment: CrossAxisAlignment.center,
+                      children: <Widget>[
+                        Icon(MdiIcons.bank),
+                        Text(
+                          "Bank to Bank",
+                          style: GoogleFonts.robotoCondensed(),
+                        ),
+                      ],
                     ),
                     shape: RoundedRectangleBorder(
                         borderRadius: BorderRadius.circular(15)),
@@ -133,10 +141,10 @@ class SamplePage extends StatelessWidget {
                         children: <Widget>[
                           Text(
                             "Recent contacts",
-                            style: GoogleFonts.robotoCondensed(fontSize: 18.0),
+                            style: GoogleFonts.robotoCondensed(fontSize: 20.0),
                           ),
                           SizedBox(
-                              width: MediaQuery.of(context).size.width / 2.6),
+                              width: MediaQuery.of(context).size.width / 3),
                           IconButton(
                             icon: Icon(Icons.more_horiz),
                             onPressed: () {},
@@ -156,7 +164,7 @@ class SamplePage extends StatelessWidget {
                       ),
                     ),
                     Padding(
-                      padding: EdgeInsets.only(left: 60.0, top: 15, right: 60),
+                      padding: EdgeInsets.only(left: 60.0, right: 60),
                       child: Container(
                         decoration: BoxDecoration(
                           color: Colors.white,
@@ -172,11 +180,13 @@ class SamplePage extends StatelessWidget {
                           borderRadius: BorderRadius.circular(90),
                         ),
                         child: TextFormField(
-                          initialValue: "Recipient",
                           decoration: InputDecoration(
+                            contentPadding: EdgeInsets.symmetric(vertical: 15),
                             border: InputBorder.none,
                             prefixIcon: Icon(Icons.search),
-                            hintStyle: TextStyle(color: Colors.black),
+                            hintText: "Recipient",
+                            hintStyle:
+                                GoogleFonts.robotoCondensed(color: Colors.grey),
                           ),
                         ),
                       ),
@@ -184,18 +194,51 @@ class SamplePage extends StatelessWidget {
                     Padding(
                       padding: EdgeInsets.only(left: 40.0, top: 15, right: 40),
                       child: TextFormField(
-                        initialValue: "Balance",
                         decoration: InputDecoration(
+                          contentPadding: EdgeInsets.symmetric(vertical: 15),
                           prefixIcon: Icon(Icons.attach_money),
+                          hintText: "Balance",
+                          hintStyle:
+                              GoogleFonts.robotoCondensed(color: Colors.grey),
                         ),
                       ),
                     ),
                     Padding(
                       padding: EdgeInsets.only(left: 40.0, top: 15, right: 40),
                       child: TextFormField(
-                        initialValue: "Message",
                         decoration: InputDecoration(
+                          contentPadding: EdgeInsets.symmetric(vertical: 15),
                           prefixIcon: Icon(Icons.mail_outline),
+                          hintText: "Message",
+                          hintStyle:
+                              GoogleFonts.robotoCondensed(color: Colors.grey),
+                        ),
+                      ),
+                    ),
+                    Padding(
+                      padding: EdgeInsets.only(left: 50, top: 50, right: 50),
+                      child: Container(
+                        height: 60,
+                        width: MediaQuery.of(context).size.width - 100,
+                        child: RaisedButton(
+                          onPressed: () {},
+                          color: Colors.indigoAccent[700],
+                          textColor: Colors.white,
+                          shape: RoundedRectangleBorder(
+                            borderRadius: BorderRadius.circular(90),
+                          ),
+                          child: Row(
+                            mainAxisAlignment: MainAxisAlignment.center,
+                            crossAxisAlignment: CrossAxisAlignment.center,
+                            children: <Widget>[
+                              Text("Confirm",
+                                  style: GoogleFonts.robotoCondensed(
+                                      fontSize: 18,
+                                      fontWeight: FontWeight.bold)),
+                              SizedBox(width: 15),
+                              Icon(MdiIcons.sendOutline),
+                            ],
+                          ),
                         ),
                       ),
                     ),
