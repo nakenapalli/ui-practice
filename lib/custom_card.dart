@@ -8,29 +8,31 @@ class CustomCard extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Card(
-      shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(10.0)),
-      margin: EdgeInsets.all(16.0),
-      elevation: 10.0,
-      child: Padding(
-        padding: EdgeInsets.all(5.0),
-        child: Column(
-          children: <Widget>[
-            // Text(
-            //   text,
-            //   textDirection: TextDirection.ltr,
-            //   style: GoogleFonts.roboto(),
-            //   textScaleFactor: 1.2,
-            // ),
-            // SizedBox(height: 5.0),
-            Text(
-              text,
-              textDirection: TextDirection.ltr,
-              style: GoogleFonts.roboto(),
-              textScaleFactor: 0.8,
+    return SizedBox(
+      width: MediaQuery.of(context).size.width / 4.5,
+      height: MediaQuery.of(context).size.height / 6,
+      child: Column(
+        children: <Widget>[
+          Card(
+            shape: RoundedRectangleBorder(
+                borderRadius: BorderRadius.circular(10.0)),
+            margin: EdgeInsets.all(10.0),
+            elevation: 10.0,
+            child: Padding(
+              padding: EdgeInsets.all(10.0),
+              child: Image.network(
+                'http://shellfishireland.com/wp-content/uploads/2019/03/beweship-contact-placeholder.jpg',
+                fit: BoxFit.scaleDown,
+              ),
             ),
-          ],
-        ),
+          ),
+          Text(
+            text,
+            textDirection: TextDirection.ltr,
+            style: GoogleFonts.roboto(),
+            textScaleFactor: 0.8,
+          ),
+        ],
       ),
     );
   }

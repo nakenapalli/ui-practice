@@ -43,9 +43,9 @@ class SamplePage extends StatelessWidget {
               "Send and Receive Money",
               style: GoogleFonts.robotoCondensed(
                 fontWeight: FontWeight.bold,
+                fontSize: 30,
                 color: Colors.white,
               ),
-              textScaleFactor: 2.0,
             ),
           ),
           SizedBox(height: 25.0),
@@ -99,7 +99,10 @@ class SamplePage extends StatelessWidget {
             child: Container(
               decoration: BoxDecoration(
                 color: Colors.white,
-                borderRadius: BorderRadius.circular(40),
+                borderRadius: BorderRadius.only(
+                  topLeft: Radius.circular(40),
+                  topRight: Radius.circular(40),
+                ),
               ),
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
@@ -151,7 +154,7 @@ class SamplePage extends StatelessWidget {
                     ),
                   ),
                   Padding(
-                    padding: EdgeInsets.only(left: 40.0, top: 15),
+                    padding: EdgeInsets.only(left: 40.0, top: 15, right: 40),
                     child: TextFormField(
                       initialValue: "Balance",
                       decoration: InputDecoration(
@@ -160,11 +163,11 @@ class SamplePage extends StatelessWidget {
                     ),
                   ),
                   Padding(
-                    padding: EdgeInsets.only(left: 40.0, top: 15),
+                    padding: EdgeInsets.only(left: 40.0, top: 15, right: 40),
                     child: TextFormField(
                       initialValue: "Message",
                       decoration: InputDecoration(
-                        prefixIcon: Icon(Icons.message),
+                        prefixIcon: Icon(Icons.mail_outline),
                       ),
                     ),
                   ),
