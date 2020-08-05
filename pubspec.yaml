@@ -26,6 +26,9 @@ dependencies:
   google_fonts: ^1.1.0
   flappy_search_bar: ^1.7.2
   material_design_icons_flutter: ^4.0.5345
+  flutter_swiper: ^1.1.4
+  assets:
+    - graphics/iconmonstr-shipping-box-11.svg
 
 
   # The following adds the Cupertino Icons font to your application.
