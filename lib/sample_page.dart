@@ -8,7 +8,7 @@ class SamplePage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    //print(MediaQuery.of(context).size);
+    print(MediaQuery.of(context).size);
     return Scaffold(
       backgroundColor: Colors.indigoAccent[700],
       body: Column(
@@ -56,8 +56,9 @@ class SamplePage extends StatelessWidget {
             padding: EdgeInsets.only(left: 15),
             child: ToggleButtons(
               color: Colors.white,
+              selectedColor: Colors.indigoAccent[700],
               renderBorder: false,
-              isSelected: [false, false, false],
+              isSelected: [true, false, false],
               children: <Widget>[
                 Padding(
                   padding: EdgeInsets.fromLTRB(15, 0, 15, 0),
@@ -74,7 +75,7 @@ class SamplePage extends StatelessWidget {
                       ],
                     ),
                     shape: RoundedRectangleBorder(
-                        borderRadius: BorderRadius.circular(15)),
+                        borderRadius: BorderRadius.circular(30)),
                   ),
                 ),
                 Padding(
@@ -92,7 +93,7 @@ class SamplePage extends StatelessWidget {
                       ],
                     ),
                     shape: RoundedRectangleBorder(
-                        borderRadius: BorderRadius.circular(15)),
+                        borderRadius: BorderRadius.circular(30)),
                   ),
                 ),
                 Padding(
@@ -110,7 +111,7 @@ class SamplePage extends StatelessWidget {
                       ],
                     ),
                     shape: RoundedRectangleBorder(
-                        borderRadius: BorderRadius.circular(15)),
+                        borderRadius: BorderRadius.circular(30)),
                   ),
                 ),
               ],
@@ -153,14 +154,24 @@ class SamplePage extends StatelessWidget {
                       ),
                     ),
                     Padding(
-                      padding: EdgeInsets.only(left: 20.0),
-                      child: Wrap(
-                        children: <Widget>[
-                          CustomCard(text: "Alexander"),
-                          CustomCard(text: "Jessica L"),
-                          CustomCard(text: "Marwan J"),
-                          CustomCard(text: "Junaedi"),
-                        ],
+                      padding: EdgeInsets.only(left: 30.0, right: 30.0),
+                      child: Container(
+                        height: 125,
+                        child: SingleChildScrollView(
+                          scrollDirection: Axis.horizontal,
+                          child: Row(
+                            children: <Widget>[
+                              CustomCard(text: "Alexander"),
+                              CustomCard(text: "Jessica L"),
+                              CustomCard(text: "Marwan J"),
+                              CustomCard(text: "Junaedi"),
+                              CustomCard(text: "Alexander"),
+                              CustomCard(text: "Jessica L"),
+                              CustomCard(text: "Marwan J"),
+                              CustomCard(text: "Junaedi"),
+                            ],
+                          ),
+                        ),
                       ),
                     ),
                     Padding(
