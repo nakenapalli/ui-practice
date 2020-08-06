@@ -10,59 +10,79 @@ class SamplePage2 extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: Colors.indigoAccent[700],
-      body: Column(
-        crossAxisAlignment: CrossAxisAlignment.start,
+      body: Stack(
+        alignment: Alignment.bottomCenter,
         children: <Widget>[
-          Padding(
-            padding: EdgeInsets.all(15.0),
-            child: Row(
-              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+          Container(
+            child: Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
               children: <Widget>[
-                IconButton(
-                  icon: Icon(Icons.filter_list),
-                  onPressed: () {},
-                ),
-                Container(
-                  width: 50.0,
+                Padding(
+                  padding: EdgeInsets.all(15.0),
                   child: Row(
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
                     children: <Widget>[
                       IconButton(
-                        icon: Icon(Icons.more_vert),
+                        icon: Icon(Icons.filter_list),
                         onPressed: () {},
                       ),
+                      Container(
+                        width: 50.0,
+                        child: Row(
+                          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                          children: <Widget>[
+                            IconButton(
+                              icon: Icon(Icons.more_vert),
+                              onPressed: () {},
+                            ),
+                          ],
+                        ),
+                      ),
                     ],
+                  ),
+                ),
+                SizedBox(height: 25.0),
+                Padding(
+                  padding: EdgeInsets.only(left: 40.0),
+                  child: Text(
+                    "Hi, Nikhil",
+                    style: GoogleFonts.robotoCondensed(
+                      fontSize: 30,
+                      color: Colors.white,
+                    ),
+                  ),
+                ),
+                Padding(
+                  padding: EdgeInsets.only(left: 40.0, top: 5.0),
+                  child: Text(
+                    "Welcome to the club!",
+                    style: GoogleFonts.robotoCondensed(
+                      fontSize: 20,
+                      color: Colors.white,
+                    ),
                   ),
                 ),
               ],
             ),
           ),
-          SizedBox(height: 25.0),
           Padding(
-            padding: EdgeInsets.only(left: 40.0),
-            child: Text(
-              "Hi, Nikhil",
-              style: GoogleFonts.robotoCondensed(
-                fontSize: 30,
-                color: Colors.white,
+            padding: EdgeInsets.only(left: 2.0, right: 2.0),
+            child: Expanded(
+              child: Container(
+                height: MediaQuery.of(context).size.height * 0.63,
+                decoration: BoxDecoration(
+                  color: Colors.white,
+                ),
               ),
             ),
           ),
-          Padding(
-            padding: EdgeInsets.only(left: 40.0, top: 5.0),
-            child: Text(
-              "Welcome to the club!",
-              style: GoogleFonts.robotoCondensed(
-                fontSize: 20,
-                color: Colors.white,
-              ),
-            ),
-          ),
-          Padding(
-            padding: EdgeInsets.only(left: 30.0, top: 40),
+          Positioned(
+            bottom: 420,
+            right: 20,
             child: Container(
-              width: MediaQuery.of(context).size.width / 1.2,
-              height: MediaQuery.of(context).size.height / 4.4,
+              width: MediaQuery.of(context).size.width / 0.9,
+              height: MediaQuery.of(context).size.height / 3.7,
+              padding: EdgeInsets.only(left: 70),
               child: Swiper(
                 itemBuilder: (context, index) {
                   return CustomCardWide(
@@ -71,7 +91,11 @@ class SamplePage2 extends StatelessWidget {
                     expired: "valid until June 20",
                   );
                 },
-                itemCount: 3,
+                itemCount: 5,
+                pagination: SwiperPagination(
+                  margin: EdgeInsets.only(top: 20),
+                  builder: SwiperPagination.dots,
+                ),
               ),
             ),
           ),

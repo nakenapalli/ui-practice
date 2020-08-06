@@ -21,14 +21,22 @@ class CustomCardWide extends StatelessWidget {
       decoration: BoxDecoration(
         color: Colors.white,
         borderRadius: BorderRadius.circular(10),
+        boxShadow: [
+          BoxShadow(
+            color: Colors.black45,
+            blurRadius: 3.0,
+            spreadRadius: 3.0,
+            offset: Offset(1.0, 1.0),
+          )
+        ],
       ),
-      margin: EdgeInsets.all(10.0),
+      margin: EdgeInsets.all(30.0),
       padding: EdgeInsets.only(top: 30, bottom: 20, left: 30, right: 20),
       child: Row(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: <Widget>[
           Image.asset('assets/graphics/box.jpg'),
-          SizedBox(width: 20),
+          SizedBox(width: 25),
           Flexible(
             child: Column(
               mainAxisAlignment: MainAxisAlignment.start,
