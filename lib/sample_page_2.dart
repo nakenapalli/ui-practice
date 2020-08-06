@@ -59,16 +59,10 @@ class SamplePage2 extends StatelessWidget {
             ),
           ),
           Padding(
-            padding: EdgeInsets.only(left: 30.0, top: 20),
+            padding: EdgeInsets.only(left: 30.0, top: 40),
             child: Container(
-              decoration: BoxDecoration(
-                color: Colors.white,
-                borderRadius: BorderRadius.circular(10),
-              ),
-              margin: EdgeInsets.all(10.0),
-              width: MediaQuery.of(context).size.width / 1.3,
-              height: MediaQuery.of(context).size.height / 4.7,
-              padding: EdgeInsets.all(20.0),
+              width: MediaQuery.of(context).size.width / 1.2,
+              height: MediaQuery.of(context).size.height / 4.4,
               child: Swiper(
                 itemBuilder: (context, index) {
                   return CustomCardWide(
