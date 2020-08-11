@@ -16,24 +16,22 @@ class CustomTile extends StatelessWidget {
         height: MediaQuery.of(context).size.height / 9,
         child: Column(
           children: <Widget>[
-            Expanded(
-              child: Container(
-                decoration: BoxDecoration(
-                  color: Colors.white,
-                  borderRadius: BorderRadius.all(Radius.circular(15)),
-                  boxShadow: [
-                    BoxShadow(
-                      color: Colors.black45,
-                      blurRadius: 1.0,
-                      spreadRadius: 1.0,
-                      offset: Offset(1.0, 1.0),
-                    )
-                  ],
-                ),
-                padding:
-                    EdgeInsets.only(left: 20, right: 20, top: 15, bottom: 15),
-                child: Icon(icon, color: Colors.indigoAccent[700]),
+            Container(
+              decoration: BoxDecoration(
+                color: Colors.white,
+                borderRadius: BorderRadius.all(Radius.circular(15)),
+                boxShadow: [
+                  BoxShadow(
+                    color: Colors.black45,
+                    blurRadius: 1.0,
+                    spreadRadius: 1.0,
+                    offset: Offset(1.0, 1.0),
+                  )
+                ],
               ),
+              padding:
+                  EdgeInsets.only(left: 20, right: 20, top: 20, bottom: 20),
+              child: Icon(icon, color: Colors.indigoAccent[700]),
             ),
             SizedBox(height: 10),
             Text(
