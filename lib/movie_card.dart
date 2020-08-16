@@ -7,8 +7,6 @@ class MovieCard extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      // width: MediaQuery.of(context).size.width * 0.75,
-      // height: MediaQuery.of(context).size.height * 0.25,
       decoration: BoxDecoration(
         color: Colors.white,
         borderRadius: BorderRadius.circular(10),
@@ -27,7 +25,9 @@ class MovieCard extends StatelessWidget {
         crossAxisAlignment: CrossAxisAlignment.start,
         children: <Widget>[
           FittedBox(
-            child: Image.asset('assets/graphics/inception.jpg'),
+            child: Image.asset(
+              'assets/graphics/inception.jpg',
+            ),
           ),
           Column(
             children: [
