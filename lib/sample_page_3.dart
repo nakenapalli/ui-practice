@@ -14,36 +14,25 @@ class SamplePage3 extends StatelessWidget {
       body: OrientationBuilder(
         builder: (context, orientation) {
           SizeConstants constraints = SizeConstants();
-          return orientation == Orientation.portrait
-              ? portraitLayout(constraints.portraitWidth(context))
-              : landscapeLayout(constraints.landscapeWidth(context));
+          return Container(
+            width: MediaQuery.of(context).size.width,
+            child: orientation == Orientation.portrait
+                ? buildLayout(constraints.portraitWidth(context))
+                : buildLayout(constraints.landscapeWidth(context)),
+          );
         },
       ),
     );
   }
 }
 
-Widget portraitLayout(double width) {
-  return Container(
-    width: width,
+Widget buildLayout(double cardWidth) {
+  return SingleChildScrollView(
     child: Wrap(
       children: [
-        MovieCard(),
-        MovieCard(),
-        MovieCard(),
-      ],
-    ),
-  );
-}
-
-Widget landscapeLayout(double width) {
-  return Container(
-    width: width,
-    child: Wrap(
-      children: [
-        MovieCard(),
-        MovieCard(),
-        MovieCard(),
+        MovieCard(width: cardWidth),
+        MovieCard(width: cardWidth),
+        MovieCard(width: cardWidth),
       ],
     ),
   );
