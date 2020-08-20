@@ -28,24 +28,27 @@ class _ChartCardState extends State<ChartCard> {
       ),
       margin: EdgeInsets.all(30.0),
       padding: EdgeInsets.only(top: 20, bottom: 20, left: 30, right: 30),
-      child: LineChart(
-        LineChartData(
-          lineBarsData: <LineChartBarData>[
-            LineChartBarData(
-              spots: <FlSpot>[
-                FlSpot(2, 10),
-                FlSpot(5, 8),
-                FlSpot(8, 11),
-              ],
-            ),
-            LineChartBarData(
-              spots: <FlSpot>[
-                FlSpot(3, 5),
-                FlSpot(5, 2),
-                FlSpot(9, 9),
-              ],
-            ),
-          ],
+      child: AspectRatio(
+        aspectRatio: 5 / 3,
+        child: LineChart(
+          LineChartData(
+            lineBarsData: <LineChartBarData>[
+              LineChartBarData(
+                spots: <FlSpot>[
+                  FlSpot(2, 10),
+                  FlSpot(5, 8),
+                  FlSpot(8, 11),
+                ],
+              ),
+              LineChartBarData(
+                spots: <FlSpot>[
+                  FlSpot(3, 5),
+                  FlSpot(5, 2),
+                  FlSpot(9, 9),
+                ],
+              ),
+            ],
+          ),
         ),
       ),
     );
