@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'movie_card.dart';
 import 'size_constants.dart';
+import 'chart_card.dart';
 
 class SamplePage3 extends StatelessWidget {
   const SamplePage3({Key key}) : super(key: key);
@@ -31,6 +32,7 @@ Widget buildLayout(double cardWidth) {
   return SingleChildScrollView(
     child: Wrap(
       children: [
+        ChartCard(width: cardWidth),
         MovieCard(width: cardWidth),
         MovieCard(width: cardWidth),
         MovieCard(width: cardWidth),
