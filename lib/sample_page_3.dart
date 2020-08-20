@@ -27,6 +27,7 @@ class SamplePage3 extends StatelessWidget {
 }
 
 Widget buildLayout(double cardWidth) {
+  print("width: $cardWidth");
   return SingleChildScrollView(
     child: Wrap(
       children: [

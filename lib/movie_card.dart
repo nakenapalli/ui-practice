@@ -7,27 +7,22 @@ class MovieCard extends StatefulWidget {
   final double width;
 
   @override
-  _MovieCardState createState() => _MovieCardState(width);
+  _MovieCardState createState() => _MovieCardState();
 }
 
 class _MovieCardState extends State<MovieCard> {
-  _MovieCardState(this.cardWidth);
-
-  final double cardWidth;
-
   @override
   Widget build(BuildContext context) {
     return Container(
-      width: cardWidth * 0.85,
+      width: widget.width,
       decoration: BoxDecoration(
         color: Colors.white,
         borderRadius: BorderRadius.circular(10),
         boxShadow: [
           BoxShadow(
-            color: Colors.black45,
-            blurRadius: 3.0,
-            spreadRadius: 3.0,
-            offset: Offset(1.0, 1.0),
+            color: Colors.black45.withOpacity(0.2),
+            blurRadius: 2.0,
+            spreadRadius: 1.0,
           )
         ],
       ),

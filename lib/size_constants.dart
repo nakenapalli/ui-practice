@@ -6,6 +6,6 @@ class SizeConstants {
   }
 
   double landscapeWidth(BuildContext context) {
-    return MediaQuery.of(context).size.width * 0.5;
+    return MediaQuery.of(context).size.width * 0.42;
   }
 }
